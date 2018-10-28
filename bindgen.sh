@@ -1,1 +1,1 @@
-bindgen --no-layout-tests ./native/source/smolv.h -o ./gen/bindings.rs
+bindgen --no-layout-tests ./native/source/smolv.h -o ./gen/bindings.rs -- -x c++ -std=c++14
