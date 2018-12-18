@@ -2,7 +2,7 @@
 name = "smol-v"
 version = "0.1.0"
 authors = ["Graham Wihlidal <graham@wihlidal.ca>"]
-description = "Rust ffi bindings and idiomatic wrapper for aras-p/smol-v"
+description = "Pure rust port of aras-p/smol-v"
 homepage = "https://github.com/gwihlidal/smol-v-rs"
 repository = "https://github.com/gwihlidal/smol-v-rs"
 documentation = "https://docs.rs/smol-v"
@@ -10,24 +10,18 @@ readme = "README.md"
 keywords = ["vulkan", "shader", "compression", "3d", "rendering"]
 categories = ["rendering", "rendering::engine", ]
 license = "MIT/Apache-2.0"
-build = "build.rs"
 include = [
     "src/*.rs",
-    "gen/bindings.rs",
-    "build.rs",
     "Cargo.toml",
-    "native/source/smolv.h",
-    "native/source/smolv.cpp",
 ]
+edition = "2018"
 
 [badges]
 travis-ci = { repository = "gwihlidal/smol-v-rs" }
 maintenance = { status = "actively-developed" }
 
-[build-dependencies]
-cc = { version = "1.0.25", features = ["parallel"] }
-
-[dev-dependencies]
+[dependencies]
+lazy_static = "1.2.0"
 
 [profile.release]
 lto = true
